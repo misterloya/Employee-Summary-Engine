@@ -144,23 +144,23 @@ let inquirerPrompt = (questions,employeeType) =>{
         if(employeeType === "Manager"){
 
             let {name,id,email,officeNumber,teamMember} = answers
-            let newTeamMember = new Manager(name,id,email,officeNumber);
+            let newTeam = new Manager(name,id,email,officeNumber);
             member=teamMember
-            employees.push(newTeamMember);
+            employees.push(newTeam);
 
         }else if(employeeType === "Engineer"){
 
             let {name,id,email,github,teamMember} = answers;
-            let newTeamMember = new Engineer(name,id,email,github);
+            let newTeam = new Engineer(name,id,email,github);
             member=teamMember
-            employees.push(newTeamMember);
+            employees.push(newTeam);
 
         }else if(employeeType === "Intern"){
 
             let {name,id,email,school,teamMember} = answers;
-            let newTeamMember = new Intern(name,id,email,school);
+            let newTeam = new Intern(name,id,email,school);
             member=teamMember
-            employees.push(newTeamMember);
+            employees.push(newTeam);
         }
         // checks type, then prompts questions
 
@@ -188,5 +188,5 @@ let inquirerPrompt = (questions,employeeType) =>{
     });
 };
 
-// initially runs to ask user to add a manager
+// runs to ask user to add a manager first ??? 
 inquirerPrompt(questionsManager,"Manager");
